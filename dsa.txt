@@ -48,3 +48,15 @@ function twoSum(arr, target) {
     map.set(arr[i], i);
   }
 }
+
+function flatten(arr){
+  let result = []
+  for(let num of arr){
+    if(Array.isArray(num)){
+     result= result.concat(flatten(num))
+    }else{
+      result.push(num)
+    }
+  }
+  return result
+}
