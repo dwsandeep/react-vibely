@@ -61,11 +61,16 @@ function flatten(arr){
   return result
 }
 
-function groupBy(arr, key) {
-  return arr.reduce((acc, curr) => {
-    const k = curr[key];
-    if (!acc[k]) acc[k] = [];
-    acc[k].push(curr);
-    return acc;
-  }, {});
+function groupBy(arr, key){
+  return arr.reduce((acc, cur)=>{
+    let k = cur[key]
+    if(!acc[k]){
+      acc[k]=[]
+      
+    }else {
+    }
+      acc[k].push(cur)
+    return acc
+  },{})
 }
+
