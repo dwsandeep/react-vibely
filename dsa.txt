@@ -60,3 +60,12 @@ function flatten(arr){
   }
   return result
 }
+
+function groupBy(arr, key) {
+  return arr.reduce((acc, curr) => {
+    const k = curr[key];
+    if (!acc[k]) acc[k] = [];
+    acc[k].push(curr);
+    return acc;
+  }, {});
+}
