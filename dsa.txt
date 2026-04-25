@@ -18,3 +18,21 @@ function reverseStr(str){
   }
   return reversed
 }
+
+function findDuplicates(arr){
+  let obj={}
+  let dub=[]
+  for(let num of arr){
+    if(obj[num]){
+      obj[num]++
+    }else{
+      obj[num]=1
+    }
+  }
+  for(let item in obj){
+    if(obj[item]>1){
+      dub.push(Number(item))
+    }
+  }
+  return dub
+}
