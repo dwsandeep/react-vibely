@@ -74,3 +74,17 @@ function groupBy(arr, key){
   },{})
 }
 
+function reverseNum(num){
+let r=0;
+  while(num>0){
+    let last = num%10;
+    r=r*10+last;
+    console.log(r)
+    num = Math.floor(num/10)
+  }
+  return r
+}
+
+
+
+
