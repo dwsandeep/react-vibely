@@ -93,6 +93,36 @@ function isSorted(arr){
   return true
 }
 
+function isValid(s) {
+  const stack = [];
+  
+  const map = {
+    ')': '(',
+    '}': '{',
+    ']': '['
+  };
 
+  for (let char of s) {
+    if (char === '(' || char === '{' || char === '[') {
+      stack.push(char);
+      // console.log(stack,'k',char)
+
+    } else {
+      if (stack.pop() !== map[char]) {
+        return false;
+      }
+    }
+
+  }
+
+  return stack.length === 0;
+}
+
+// Test
+// console.log(isValid("()"));      // true
+console.log(isValid("()[]{}"));  // true
+// console.log(isValid("(]"));      // false
+// console.log(isValid("([)]"));    // false
+// console.log(isValid("{[]}"));    // true
 
 
